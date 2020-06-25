@@ -18,6 +18,7 @@ class FileThemeNodeContentRenderer extends Component {
     const {
       scaffoldBlockPxWidth,
       toggleChildrenVisibility,
+      onItemSelection,
       connectDragPreview,
       connectDragSource,
       isDragging,
@@ -210,6 +211,7 @@ FileThemeNodeContentRenderer.defaultProps = {
   swapLength: null,
   title: null,
   toggleChildrenVisibility: null,
+  onItemSelection:null
 };
 
 FileThemeNodeContentRenderer.propTypes = {
@@ -232,6 +234,7 @@ FileThemeNodeContentRenderer.propTypes = {
   swapLength: PropTypes.number,
   title: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
   toggleChildrenVisibility: PropTypes.func,
+  onItemSelection: PropTypes.func,
   treeIndex: PropTypes.number.isRequired,
   treeId: PropTypes.string.isRequired,
   rowDirection: PropTypes.string.isRequired,
