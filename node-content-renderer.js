@@ -143,12 +143,19 @@ class FileThemeNodeContentRenderer extends Component {
                   ...style,
                 }}
               >
-                <div
+                <button
                   className={
                     styles.rowContents +
                     (!canDrag ? ` ${styles.rowContentsDragDisabled}` : '')
                   }
-                >
+                  onClick={() => {
+                    onItemSelection && onItemSelection({
+                        node,
+                        path,
+                        treeIndex,
+                    })}
+                }
+>
                   <div className={styles.rowToolbar}>
                     {icons.map((icon, index) => (
                       <div
@@ -181,7 +188,7 @@ class FileThemeNodeContentRenderer extends Component {
                       </div>
                     ))}
                   </div>
-                </div>
+                </button>
               </div>
             </div>
           )}
